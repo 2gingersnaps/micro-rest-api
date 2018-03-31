@@ -14,22 +14,19 @@
 >Optional log consolidation and monitoring are provided by Dashbird.
 >
 >Overall, this is a fast, affordable, "cloud thinking" solution for on-demand data queries and reporting.
-
 ### requirements
-```text
+```txt
 (1) AWS Lambda and CloudFormation
 (2) Serverless
 (3) MongoDB Atlas
 (4) Dashbird (optional)
+I highly recommend this awesome tutorial by https://github.com/adnanrahic: https://hackernoon.com/building-a-serverless-rest-api-with-node-js-and-mongodb-2e0ed0638f47
 ```
-
-
 ### run locally
 ```sh
 npm install
 sls offline start --skipCacheInvalidation
 ```
-
 ### deployment
 ```sh
 sls deploy
