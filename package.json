@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["xtra, aws, serverless, mongo, mongoose, node, cloudformation, cloud, infrastructure, atlas, lambda"],
+  "keywords": ["xtra, aws, serverless, mongo, mongoose, node, cloudformation, cloud, infrastructure, atlas, lambda, microservice, serverless"],
   "author": "2gingersnaps robbikenney@gmail.com",
   "license": "ISC",
   "devDependencies": {
