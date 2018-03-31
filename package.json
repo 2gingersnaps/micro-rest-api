@@ -1,0 +1,19 @@
+{
+  "name": "micro-rest-api",
+  "version": "0.1.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["xtra, aws, serverless, mongo, mongoose, node, cloudformation, cloud, infrastructure, atlas, lambda"],
+  "author": "2gingersnaps robbikenney@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^3.18.0"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "mongoose": "^5.0.12"
+  }
+}
