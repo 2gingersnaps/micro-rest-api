@@ -14,35 +14,35 @@ functions: # add 4 functions for CRUD
     handler: handler.create # point to exported create function in handler.js
     events:
       - http:
-          path: notes # path will be domain.name.com/dev/notes
+          path: reviews # path will be domain.name.com/dev/reviews
           method: post
           cors: true
   getOne:
     handler: handler.getOne
     events:
       - http:
-          path: notes/{id} # path will be domain.name.com/dev/notes/1
+          path: reviews/{id} # path will be domain.name.com/dev/reviews/1
           method: get
           cors: true
   getAll:
-    handler: handler.getAll # path will be domain.name.com/dev/notes
+    handler: handler.getAll # path will be domain.name.com/dev/reviews
     events:
      - http:
-         path: notes
+         path: reviews
          method: get
          cors: true
   update:
-    handler: handler.update # path will be domain.name.com/dev/notes/1
+    handler: handler.update # path will be domain.name.com/dev/reviews/1
     events:
      - http:
-         path: notes/{id}
+         path: reviews/{id}
          method: put
          cors: true
   delete:
     handler: handler.delete
     events:
      - http:
-         path: notes/{id} # path will be domain.name.com/dev/notes/1
+         path: reviews/{id} # path will be domain.name.com/dev/reviews/1
          method: delete
          cors: true
 

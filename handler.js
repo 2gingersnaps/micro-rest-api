@@ -4,22 +4,22 @@
 require('dotenv').config({ path: './variables.env' });
 
 const connectToDatabase = require('./db');
-const Note = require('./models/Note');
+const Review = require('./models/Review');
 
 module.exports.create = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
 
   connectToDatabase()
     .then(() => {
-      Note.create(JSON.parse(event.body))
-        .then(note => callback(null, {
+      Review.create(JSON.parse(event.body))
+        .then(review => callback(null, {
           statusCode: 200,
-          body: JSON.stringify(note)
+          body: JSON.stringify(review)
         }))
         .catch(err => callback(null, {
           statusCode: err.statusCode || 500,
           headers: { 'Content-Type': 'text/plain' },
-          body: 'Could not create the note.'
+          body: 'Could not create the review.'
         }));
     });
 };
@@ -29,15 +29,15 @@ module.exports.getOne = (event, context, callback) => {
 
   connectToDatabase()
     .then(() => {
-      Note.findById(event.pathParameters.id)
-        .then(note => callback(null, {
+      Review.findById(event.pathParameters.id)
+        .then(review => callback(null, {
           statusCode: 200,
-          body: JSON.stringify(note)
+          body: JSON.stringify(review)
         }))
         .catch(err => callback(null, {
           statusCode: err.statusCode || 500,
           headers: { 'Content-Type': 'text/plain' },
-          body: 'Could not fetch the note.'
+          body: 'Could not fetch the review.'
         }));
     });
 };
@@ -47,15 +47,15 @@ module.exports.getAll = (event, context, callback) => {
 
   connectToDatabase()
     .then(() => {
-      Note.find()
-        .then(notes => callback(null, {
+      Review.find()
+        .then(reviews => callback(null, {
           statusCode: 200,
-          body: JSON.stringify(notes)
+          body: JSON.stringify(reviews)
         }))
         .catch(err => callback(null, {
           statusCode: err.statusCode || 500,
           headers: { 'Content-Type': 'text/plain' },
-          body: 'Could not fetch the notes.'
+          body: 'Could not fetch the reviews.'
         }))
     });
 };
@@ -65,15 +65,15 @@ module.exports.update = (event, context, callback) => {
 
   connectToDatabase()
     .then(() => {
-      Note.findByIdAndUpdate(event.pathParameters.id, JSON.parse(event.body), { new: true })
-        .then(note => callback(null, {
+      Review.findByIdAndUpdate(event.pathParameters.id, JSON.parse(event.body), { new: true })
+        .then(review => callback(null, {
           statusCode: 200,
-          body: JSON.stringify(note)
+          body: JSON.stringify(review)
         }))
         .catch(err => callback(null, {
           statusCode: err.statusCode || 500,
           headers: { 'Content-Type': 'text/plain' },
-          body: 'Could not fetch the notes.'
+          body: 'Could not fetch the reviews.'
         }));
     });
 };
@@ -83,15 +83,15 @@ module.exports.delete = (event, context, callback) => {
 
   connectToDatabase()
     .then(() => {
-      Note.findByIdAndRemove(event.pathParameters.id)
-        .then(note => callback(null, {
+      Review.findByIdAndRemove(event.pathParameters.id)
+        .then(review => callback(null, {
           statusCode: 200,
-          body: JSON.stringify({ message: 'Removed note with id: ' + note._id, note: note })
+          body: JSON.stringify({ message: 'Removed review with id: ' + review._id, review: review })
         }))
         .catch(err => callback(null, {
           statusCode: err.statusCode || 500,
           headers: { 'Content-Type': 'text/plain' },
-          body: 'Could not fetch the notes.'
+          body: 'Could not fetch the reviews.'
         }));
     });
 };
