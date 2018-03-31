@@ -1,4 +1,4 @@
-#micro-rest-api
+# micro-rest-api
 >Use Node.js, Mongo, and free serverless infrastructure services instead of traditional full stack architecture to handle on-demand data reporting tasks.
 >
 >In this example, traditional server routes are replaced by AWS CloudFormation.
@@ -15,7 +15,7 @@
 >
 >Overall, this is a fast, affordable, "cloud thinking" solution for on-demand data queries and reporting.
 
-###requirements
+### requirements
 ```text
 (1) AWS Lambda and CloudFormation
 (2) Serverless
@@ -24,17 +24,17 @@
 ```
 
 
-###run locally
+### run locally
 ```sh
 npm install
 sls offline start --skipCacheInvalidation
 ```
 
-###deployment
+### deployment
 ```sh
 sls deploy
 ```
-###available endpoints
+### available endpoints
 ```txt
 getAll
 getOne
