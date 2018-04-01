@@ -31,9 +31,12 @@ sls offline start --skipCacheInvalidation
 ```sh
 sls deploy
 ```
-### available endpoints
+### available endpoint functions
 ```txt
 getAll
 getOne
-(post, put, and delete routes will work for you if you set up your personal permissions accordingly in Atlas and AWS)
+create
+update
+delete
+report
 ```
