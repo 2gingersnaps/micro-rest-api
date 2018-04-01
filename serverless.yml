@@ -52,6 +52,13 @@ functions:
          path: report/{userID}/{rating} # path will be domain.name.com/dev/report/11112222/1
          method: get
          cors: true
+  productReport:
+    handler: handler.productReport # path will be domain.name.com/dev/productreport
+    events:
+     - http:
+         path: productreport
+         method: get
+         cors: true
 
 plugins:
 - serverless-offline # plugin to be able to run the offline emulation
