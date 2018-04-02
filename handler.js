@@ -5,6 +5,7 @@ require('dotenv').config({ path: './variables.env' });
 
 const connectToDatabase = require('./db');
 const Review = require('./models/Review');
+const averageRating = require('./scripts/average-rating');
 
 module.exports.create = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
@@ -121,13 +122,6 @@ module.exports.productReport = (event, context, callback) => {
 
   connectToDatabase()
     .then(() => {
-      var averageRating = function(reviews, productName) {
-        var total = 0;
-        reviews.forEach(function(review) {
-          total += parseInt(review.rating);
-        });
-        return ({ 'averageRating' : String(total / reviews.length)})
-      };
       Review.find()
         .then(reviews => callback(null, {
           statusCode: 200,
