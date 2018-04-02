@@ -1,7 +1,7 @@
 // "use strict";
 
-var averageRating = function(reviews, productName) {
-  var total = 0;
+const averageRating = function(reviews, productName) {
+  let total = 0;
   reviews.forEach(function(review) {
     total += parseInt(review.rating);
   });

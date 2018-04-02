@@ -2,7 +2,7 @@
 
 const averageRating = require('../scripts/average-rating');
 
-var testAverageRating = function() {
+const testAverageRating = function() {
 
   const reviews = [
     {
@@ -17,8 +17,8 @@ var testAverageRating = function() {
   ]
   const productName = 'testProduct';
 
-  var averageRating1 = '4';
-  var averageRating2 = averageRating(reviews, productName).averageRating;
+  let averageRating1 = '4';
+  let averageRating2 = averageRating(reviews, productName).averageRating;
 
   console.log('Running testAverageRating...');
   console.log('averageRating1 should be equal to averageRating2');

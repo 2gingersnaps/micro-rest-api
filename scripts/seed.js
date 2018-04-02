@@ -1,4 +1,4 @@
-var sampleUserIDs = [
+const sampleUserIDs = [
   '11112222',
   '22223333',
   '33334444',
@@ -11,8 +11,8 @@ var sampleUserIDs = [
   '11110000',
   '22221111'
 ];
-var iUserIDs = 0;
-var sampleProductNames = [
+let iUserIDs = 0;
+const sampleProductNames = [
   'Cookie 100',
   'Quark 200',
   'Airfoil 300',
@@ -23,8 +23,8 @@ var sampleProductNames = [
   'Zork 800',
   'Spar 900'
 ];
-var iProductNames = 0;
-var sampleComments = [
+let iProductNames = 0;
+const sampleComments = [
   'On point. Bravo.',
   'Strongly disliked this product.',
   'LOL this was fun.',
@@ -36,21 +36,21 @@ var sampleComments = [
   'This product is super fly.',
   'Way to be Xtra'
 ];
-var iComments = 0;
-sampleRatings = [
+let iComments = 0;
+const sampleRatings = [
   '1',
   '2',
   '3',
   '4',
   '5'
 ];
-var iRatings = 0;
+let iRatings = 0;
 
-var dataCollection = [];
+let dataCollection = [];
 
-var seedData = function(reps) {
+const seedData = function(reps) {
   for (i = 0; i < reps; i++) {
-    var dataObj = {
+    let dataObj = {
       'userID' : sampleUserIDs[iUserIDs],
       'productName' : sampleProductNames[iProductNames],
       'comment' : sampleComments[iComments],
